@@ -24,7 +24,7 @@ var Snippets = function Snippets(_ref) {
 
   var script = '\n    (function(w,d,s,l,i){w[l]=w[l]||[];\n      w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\', ' + JSON.stringify(additionalEvents).slice(1, -1) + '});\n      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';\n      j.async=true;j.src=\'//www.googletagmanager.com/gtm.js?id=\'+i+dl;\n      f.parentNode.insertBefore(j,f);\n    })(window,document,\'script\',\'' + dataLayerName + '\',\'' + id + '\');';
 
-  var dataLayerVar = '\n    window.dataLayer = window.dataLayer || [];\n    window.dataLayer.push(' + JSON.stringify(dataLayer) + ')';
+  var dataLayerVar = '\n    window.' + dataLayerName + ' = window.' + dataLayerName + ' || [];\n    window.' + dataLayerName + '.push(' + JSON.stringify(dataLayer) + ')';
 
   return {
     iframe: iframe,

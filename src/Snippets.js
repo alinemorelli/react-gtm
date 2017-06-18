@@ -18,8 +18,8 @@ const Snippets = ({ id, additionalEvents, dataLayer, dataLayerName }) => {
     })(window,document,'script','${dataLayerName}','${id}');`
 
   const dataLayerVar = `
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(${JSON.stringify(dataLayer)})`
+    window.${dataLayerName} = window.${dataLayerName} || [];
+    window.${dataLayerName}.push(${JSON.stringify(dataLayer)})`
 
   return {
     iframe,
