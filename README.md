@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/react-gtm-module.svg?style=flat-square)](https://www.npmjs.com/package/react-gtm-module)
+
 # react-gtm-module
 ### React Google Tag Manager Module
 
