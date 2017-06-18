@@ -44,9 +44,12 @@
     "enzyme": "^2.8.2",
     "eslint": "^3.9.0",
     "jest": "^19.0.2",
-    "react": "^15.5.0"
+    "react": "^15.5.0",
+    "react-addons-test-utils": "^15.0.1",
+    "react-dom": "^15.0.1"
   },
   "jest": {
-    "testRegex": "__tests__.*\\.spec.js$"
+    "testRegex": "__tests__.*\\.spec.js$",
+    "collectCoverage": true
   }
 }
