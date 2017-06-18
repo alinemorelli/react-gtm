@@ -2,7 +2,7 @@ import warn from './utils/warn'
 
 // https://developers.google.com/tag-manager/quickstart
 
-const Snippets = ({ id, additionalEvents, dataLayer }) => {
+const Snippets = ({ id, additionalEvents, dataLayer, dataLayerName }) => {
   if (!id) warn('GTM Id is required')
 
   const iframe = `
@@ -15,7 +15,7 @@ const Snippets = ({ id, additionalEvents, dataLayer }) => {
       var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
       j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
       f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','${id}');`
+    })(window,document,'script','${dataLayerName}','${id}');`
 
   const dataLayerVar = `
     window.dataLayer = window.dataLayer || [];

@@ -2,7 +2,7 @@
   "name": "react-gtm",
   "version": "1.0.0",
   "description": "React Google Tag Manager Module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint .",
     "jest": "jest",
@@ -47,7 +47,6 @@
     "react": "^15.5.0"
   },
   "jest": {
-    "testRegex": "__tests__.*\\.spec.js$",
-    "resetMocks": true
+    "testRegex": "__tests__.*\\.spec.js$"
   }
 }

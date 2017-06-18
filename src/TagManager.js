@@ -9,13 +9,13 @@ const GTM = (args) => {
   }
 
   const script = () => {
-    const script = document.createElement("script")
+    const script = document.createElement('script')
     script.innerHTML = snippets.script
     return script
   }
 
   const dataScript = () => {
-    const script = document.createElement("script")
+    const script = document.createElement('script')
     script.innerHTML = snippets.dataLayerVar
     return script
   }
@@ -30,14 +30,15 @@ const GTM = (args) => {
 const TagManager = (props) => {
   const gtm = GTM({
     id: props.gtmId,
-    dataLayer: props.dataLayer,
-    additionalEvents: props.additionalEvents
+    additionalEvents: props.additionalEvents,
+    dataLayer: props.dataLayer || null,
+    dataLayerName: props.dataLayerName
   })
   if (props.dataLayer) document.head.appendChild(gtm.dataScript())
   document.head.appendChild(gtm.script())
 
   return (
-    <div className="tagmanager">
+    <div className='tagmanager'>
       {gtm.noScript()}
       {props.children}
     </div>
@@ -45,14 +46,18 @@ const TagManager = (props) => {
 }
 
 TagManager.propTypes = {
-  dataLayer: React.PropTypes.object,
   gtmId: React.PropTypes.string.isRequired,
   additionalEvents: React.PropTypes.object,
-  children: React.PropTypes.children
+  dataLayer: React.PropTypes.object,
+  dataLayerName: React.PropTypes.string,
+  children: React.PropTypes.oneOfType([
+    React.PropTypes.arrayOf(React.PropTypes.node),
+    React.PropTypes.node
+  ])
 }
 
 TagManager.defaultProps = {
-  dataLayer: 'dataLayer',
+  dataLayerName: 'dataLayer',
   additionalEvents: {}
 }
 

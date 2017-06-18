@@ -26,13 +26,13 @@ var GTM = function GTM(args) {
   };
 
   var script = function script() {
-    var script = document.createElement("script");
+    var script = document.createElement('script');
     script.innerHTML = snippets.script;
     return script;
   };
 
   var dataScript = function dataScript() {
-    var script = document.createElement("script");
+    var script = document.createElement('script');
     script.innerHTML = snippets.dataLayerVar;
     return script;
   };
@@ -47,8 +47,9 @@ var GTM = function GTM(args) {
 var TagManager = function TagManager(props) {
   var gtm = GTM({
     id: props.gtmId,
-    dataLayer: props.dataLayer,
-    additionalEvents: props.additionalEvents
+    additionalEvents: props.additionalEvents,
+    dataLayer: props.dataLayer || null,
+    dataLayerName: props.dataLayerName
   });
   if (props.dataLayer) document.head.appendChild(gtm.dataScript());
   document.head.appendChild(gtm.script());
@@ -62,14 +63,15 @@ var TagManager = function TagManager(props) {
 };
 
 TagManager.propTypes = {
-  dataLayer: _react.PropTypes.object,
-  gtmId: _react.PropTypes.string.isRequired,
-  additionalEvents: _react.PropTypes.object,
-  children: _react.PropTypes.children
+  gtmId: _react2.default.PropTypes.string.isRequired,
+  additionalEvents: _react2.default.PropTypes.object,
+  dataLayer: _react2.default.PropTypes.object,
+  dataLayerName: _react2.default.PropTypes.string,
+  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.node), _react2.default.PropTypes.node])
 };
 
 TagManager.defaultProps = {
-  dataLayer: 'dataLayer',
+  dataLayerName: 'dataLayer',
   additionalEvents: {}
 };
 
