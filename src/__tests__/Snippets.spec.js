@@ -5,7 +5,7 @@ let snippets
 
 describe('Snippets', () => {
   beforeEach(() => {
-      args = { id: 'GTM-abc123', dataLayerName: 'dataLayer', additionalEvents: {} }
+      args = { id: 'GTM-abc123', dataLayerName: 'dataLayer', events: {} }
       snippets = Snippets(args)
   })
 
@@ -15,7 +15,7 @@ describe('Snippets', () => {
 
   it('no id provided should log a warn', () => {
       console.warn = jest.fn()
-      const noIdArgs = { dataLayerName: 'dataLayer', additionalEvents: {} }
+      const noIdArgs = { dataLayerName: 'dataLayer', events: {} }
       Snippets(noIdArgs)
       expect(console.warn).toBeCalled()
   })

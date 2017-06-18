@@ -1,20 +1,20 @@
 import React from 'react'
-import { mount } from 'enzyme'
 import TagManager from '../TagManager'
 
 describe('TagManager', () => {
   it('should render tagmanager', () => {
-    const wrapper = mount(
-      <TagManager gtmId='GTM-abc123' />
-    )
-    expect(wrapper.find('noscript')).toHaveLength(1)
+    TagManager.initialize({gtmId: 'GTM-000000'})
+    expect(window.dataLayer).toHaveLength(1)
   })
 
   it('should render datalayer', () => {
-    const dataLayer = {}
-    const wrapper = mount(
-      <TagManager gtmId='GTM-abc123' dataLayer={dataLayer} />
-    )
-    expect(wrapper.find('noscript')).toHaveLength(1)
+    const gtmArgs = {
+      gtmId: 'GTM-000000',
+      dataLayer: {
+        userInfo: 'userInfo'
+      }
+    }
+    TagManager.initialize(gtmArgs)
+    expect(window.dataLayer).toHaveLength(1)
   })
 })
