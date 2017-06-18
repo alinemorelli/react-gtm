@@ -46,17 +46,8 @@
     "jest": "^19.0.2",
     "react": "^15.5.0"
   },
-  "babel": {
-    "presets": [
-      "react",
-      "es2015"
-    ],
-    "plugins": [
-      "transform-class-properties"
-    ]
-  },
   "jest": {
-    "testRegex": "*.*\\.spec.js$",
+    "testRegex": "__tests__.*\\.spec.js$",
     "resetMocks": true
   }
 }
