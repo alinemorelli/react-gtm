@@ -130,7 +130,7 @@ TagManager.initialize(tagManagerArgs)
 
 const app = document.getElementById('app')
 ReactDOM.render(<Router routes={routes} />, app)
-
+```
 
 |Value|Type|Required|Notes|
 |------|-----|-----|-----|
