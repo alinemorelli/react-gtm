@@ -40,15 +40,15 @@ var TagManager = {
   },
   initialize: function initialize(_ref) {
     var gtmId = _ref.gtmId,
-        _ref$additionalEvents = _ref.additionalEvents,
-        additionalEvents = _ref$additionalEvents === undefined ? {} : _ref$additionalEvents,
+        _ref$events = _ref.events,
+        events = _ref$events === undefined ? {} : _ref$events,
         dataLayer = _ref.dataLayer,
         _ref$dataLayerName = _ref.dataLayerName,
         dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName;
 
     var gtm = this.gtm({
       id: gtmId,
-      additionalEvents: additionalEvents,
+      events: events,
       dataLayer: dataLayer || null,
       dataLayerName: dataLayerName
     });

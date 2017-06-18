@@ -1,5 +1,5 @@
 {
-  "name": "react-gtm",
+  "name": "react-gtm-module",
   "version": "1.0.0",
   "description": "React Google Tag Manager Module",
   "main": "dist/index.js",
