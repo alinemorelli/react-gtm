@@ -46,7 +46,8 @@
     "jest": "^19.0.2",
     "react": "^15.5.0",
     "react-addons-test-utils": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react-dom": "^15.0.1",
+    "sinon": "^1.14.1"
   },
   "jest": {
     "testRegex": "__tests__.*\\.spec.js$",
