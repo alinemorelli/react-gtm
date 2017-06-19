@@ -1,5 +1,6 @@
 [![Build Status](https://img.shields.io/travis/alinemorelli/react-gtm/master.svg?style=flat-square)](https://travis-ci.org/alinemorelli/react-gtm)
 [![npm version](https://img.shields.io/npm/v/react-gtm-module.svg?style=flat-square)](https://www.npmjs.com/package/react-gtm-module)
+[![npm downloads](https://img.shields.io/npm/dm/react-gtm-module.svg?style=flat-square)](https://www.npmjs.com/package/react-gtm-module)
 
 # react-gtm-module
 ### React Google Tag Manager Module
@@ -27,7 +28,7 @@ import Router from 'react-router'
 import routes from './routes'
 
 ...
-import TagManager from 'react-gtm-module')
+import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
     gtmId: 'GTM-000000'
@@ -52,7 +53,7 @@ import Router from 'react-router'
 import routes from './routes'
 
 ...
-import TagManager from 'react-gtm-module')
+import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
     gtmId: 'GTM-000000',
@@ -79,7 +80,7 @@ If you need send multiple custom dataLayer you can initialize GTM Module on diff
 import React from 'react'
 
 ...
-import TagManager from 'react-gtm-module')
+import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
     gtmId: 'GTM-000000',
@@ -119,7 +120,7 @@ import Router from 'react-router'
 import routes from './routes'
 
 ...
-import TagManager from 'react-gtm-module')
+import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
     gtmId: 'GTM-000000',
