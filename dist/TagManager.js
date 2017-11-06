@@ -7,8 +7,13 @@ var _Snippets2 = _interopRequireDefault(_Snippets);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TagManager = {
+  dataScript: function dataScript(dataLayer) {
+    var script = document.createElement('script');
+    script.innerHTML = dataLayer;
+    return script;
+  },
   gtm: function gtm(args) {
-    var snippets = (0, _Snippets2.default)(args);
+    var snippets = _Snippets2.default.tags(args);
 
     var noScript = function noScript() {
       var noscript = document.createElement('noscript');
@@ -22,11 +27,7 @@ var TagManager = {
       return script;
     };
 
-    var dataScript = function dataScript() {
-      var script = document.createElement('script');
-      script.innerHTML = snippets.dataLayerVar;
-      return script;
-    };
+    var dataScript = this.dataScript(snippets.dataLayerVar);
 
     return {
       noScript: noScript,
@@ -48,9 +49,18 @@ var TagManager = {
       dataLayer: dataLayer || null,
       dataLayerName: dataLayerName
     });
-    if (dataLayer) document.head.appendChild(gtm.dataScript());
+    if (dataLayer) document.head.appendChild(gtm.dataScript);
     document.head.appendChild(gtm.script());
     document.body.appendChild(gtm.noScript());
+  },
+  dataLayer: function dataLayer(_ref2) {
+    var _dataLayer = _ref2.dataLayer,
+        _ref2$dataLayerName = _ref2.dataLayerName,
+        dataLayerName = _ref2$dataLayerName === undefined ? 'dataLayer' : _ref2$dataLayerName;
+
+    var snippets = _Snippets2.default.dataLayer(_dataLayer, dataLayerName);
+    var dataScript = this.dataScript(snippets);
+    document.head.appendChild(dataScript);
   }
 };
 

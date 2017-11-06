@@ -52,5 +52,8 @@
   "jest": {
     "testRegex": "__tests__.*\\.spec.js$",
     "collectCoverage": true
+  },
+  "dependencies": {
+    "jest-cli": "^21.2.1"
   }
 }
