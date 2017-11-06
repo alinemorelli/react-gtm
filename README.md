@@ -76,6 +76,32 @@ ReactDOM.render(<Router routes={routes} />, app)
 
 If you need send multiple custom dataLayer you can initialize GTM Module on different components sending different dataLayers
 
+You can initialize it normally:
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Router from 'react-router'
+import routes from './routes'
+
+...
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-000000',
+    dataLayerName: 'PageDataLayer'
+}
+
+TagManager.initialize(tagManagerArgs)
+...
+
+const app = document.getElementById('app')
+ReactDOM.render(<Router routes={routes} />, app)
+
+```
+
+And send your data in each page you want
+
 ```js
 import React from 'react'
 
@@ -83,18 +109,18 @@ import React from 'react'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-    gtmId: 'GTM-000000',
     dataLayer: {
         userId: '001',
-        userProject: 'project'
+        userProject: 'project',
+        page: 'home'
     },
-    dataLayerName: 'HomeDataLayer'
+    dataLayerName: 'PageDataLayer'
 }
 ...
 
 const Home = () => {
     ...
-    TagManager.initialize(tagManagerArgs)
+    TagManager.dataLayer(tagManagerArgs)
     ...
 
     return (
