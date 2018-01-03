@@ -41,13 +41,16 @@ var TagManager = {
         events = _ref$events === undefined ? {} : _ref$events,
         dataLayer = _ref.dataLayer,
         _ref$dataLayerName = _ref.dataLayerName,
-        dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName;
+        dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName,
+        _ref$additionalParams = _ref.additionalParams,
+        additionalParams = _ref$additionalParams === undefined ? {} : _ref$additionalParams;
 
     var gtm = this.gtm({
       id: gtmId,
       events: events,
       dataLayer: dataLayer || null,
-      dataLayerName: dataLayerName
+      dataLayerName: dataLayerName,
+      additionalParams: additionalParams
     });
     if (dataLayer) document.head.appendChild(gtm.dataScript);
     document.head.appendChild(gtm.script());

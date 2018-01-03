@@ -29,12 +29,13 @@ const TagManager = {
       dataScript
     }
   },
-  initialize: function ({ gtmId, events = {}, dataLayer, dataLayerName = 'dataLayer' }) {
+  initialize: function ({ gtmId, events = {}, dataLayer, dataLayerName = 'dataLayer', additionalParams = {} }) {
     const gtm = this.gtm({
       id: gtmId,
       events: events,
       dataLayer: dataLayer || null,
-      dataLayerName: dataLayerName
+      dataLayerName: dataLayerName,
+      additionalParams: additionalParams
     })
     if (dataLayer) document.head.appendChild(gtm.dataScript)
     document.head.appendChild(gtm.script())

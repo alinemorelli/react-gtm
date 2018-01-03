@@ -162,9 +162,39 @@ const app = document.getElementById('app')
 ReactDOM.render(<Router routes={routes} />, app)
 ```
 
+## Additional Parameters
+
+### Example:
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Router from 'react-router'
+import routes from './routes'
+
+...
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-000000',
+    additionalParams: {
+      gtm_auth: 'HVxJls-iaKxy7ZPioVonvx',
+      gtm_preview: 'env-1',
+      gtm_cookies_win: 'x'
+    }
+}
+
+TagManager.initialize(tagManagerArgs)
+...
+
+const app = document.getElementById('app')
+ReactDOM.render(<Router routes={routes} />, app)
+```
+
 |Value|Type|Required|Notes|
 |------|-----|-----|-----|
 |gtmId| `String`| Yes | GTM id, must be something like `GTM-000000`.|
 |dataLayer| `Object`| No | Object that contains all of the information that you want to pass to Google Tag Manager.|
 |dataLayerName| `String`| No | Custom name for dataLayer object.|
 |events| `Object`| No | Additional events such as 'gtm.start': new Date().getTime(),event:'gtm.js'.|
+|additionalParams| `Object`| No | Additional parameters such as 'gtm_auth' used for Environment.|
