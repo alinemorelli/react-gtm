@@ -178,7 +178,7 @@ import TagManager from 'react-gtm-module'
 const tagManagerArgs = {
     gtmId: 'GTM-000000',
     additionalParams: {
-      gtm_auth: 'HVxJls-iaKxy7ZPioVonvx',
+      gtm_auth: 'XXXXXX-XXXXXXXXXXXXXXX',
       gtm_preview: 'env-1',
       gtm_cookies_win: 'x'
     }
