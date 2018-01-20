@@ -170,6 +170,6 @@ ReactDOM.render(<Router routes={routes} />, app)
 |events| `Object`| No | Additional events such as 'gtm.start': new Date().getTime(),event:'gtm.js'.|
 
 
-###Note:
+### Note:
 
 - Disabling javascript in the browser can prevent the correct operation of this library if React is only being rendered on the client side.
