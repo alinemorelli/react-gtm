@@ -168,3 +168,8 @@ ReactDOM.render(<Router routes={routes} />, app)
 |dataLayer| `Object`| No | Object that contains all of the information that you want to pass to Google Tag Manager.|
 |dataLayerName| `String`| No | Custom name for dataLayer object.|
 |events| `Object`| No | Additional events such as 'gtm.start': new Date().getTime(),event:'gtm.js'.|
+
+
+###Note:
+
+- Disabling javascript in the browser can prevent the correct operation of this library if React is only being rendered on the client side.
