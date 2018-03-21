@@ -41,13 +41,19 @@ var TagManager = {
         events = _ref$events === undefined ? {} : _ref$events,
         dataLayer = _ref.dataLayer,
         _ref$dataLayerName = _ref.dataLayerName,
-        dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName;
+        dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName,
+        _ref$auth = _ref.auth,
+        auth = _ref$auth === undefined ? '' : _ref$auth,
+        _ref$preview = _ref.preview,
+        preview = _ref$preview === undefined ? '' : _ref$preview;
 
     var gtm = this.gtm({
       id: gtmId,
       events: events,
-      dataLayer: dataLayer || null,
-      dataLayerName: dataLayerName
+      dataLayer: dataLayer || undefined,
+      dataLayerName: dataLayerName,
+      auth: auth,
+      preview: preview
     });
     if (dataLayer) document.head.appendChild(gtm.dataScript);
     document.head.appendChild(gtm.script());
