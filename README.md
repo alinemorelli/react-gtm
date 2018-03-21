@@ -162,12 +162,49 @@ const app = document.getElementById('app')
 ReactDOM.render(<Router routes={routes} />, app)
 ```
 
+## Environments
+
+Configure how Tag Manager will works between development and production server environments.
+
+### Example:
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Router from 'react-router'
+import routes from './routes'
+
+...
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-000000',
+    auth: '6sBOnZx1hqPcO01xPOytLK',
+    preview: 'env-2'
+}
+
+TagManager.initialize(tagManagerArgs)
+
+```
+
+##### How can I find auth and preview?
+Go to Google Tag Manager -> ADMIN -> Environments -> Actions -> Get Snippet.
+Look for gtm_auth and gtm_preview
+
+##### Don't know to use GTM environments? 
+   - https://support.google.com/tagmanager/answer/6311518
+   - https://www.simoahava.com/analytics/better-qa-with-google-tag-manager-environments/
+
+
+
 |Value|Type|Required|Notes|
 |------|-----|-----|-----|
 |gtmId| `String`| Yes | GTM id, must be something like `GTM-000000`.|
 |dataLayer| `Object`| No | Object that contains all of the information that you want to pass to Google Tag Manager.|
 |dataLayerName| `String`| No | Custom name for dataLayer object.|
 |events| `Object`| No | Additional events such as 'gtm.start': new Date().getTime(),event:'gtm.js'.|
+|auth| `String` | No | used to set environments. |
+|preview| `String` | No | used to set environments, something like `env-00`. |
 
 
 ### Note:
