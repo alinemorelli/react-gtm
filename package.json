@@ -21,9 +21,9 @@
     "babel-register": "6.18.0",
     "enzyme": "^3.3.0",
     "eslint": "^3.9.0",
-    "jest": "^19.0.2",
+    "jest": "^22.4.3",
     "jest-cli": "^21.2.1",
-    "react": "^16.2.0",
+    "react": "^16.3.2",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "sinon": "^1.14.1"
