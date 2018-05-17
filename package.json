@@ -1,6 +1,6 @@
 {
   "name": "react-gtm-module-fix-jest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Google Tag Manager Module (solved run test bug)",
   "main": "dist/index.js",
   "scripts": {
