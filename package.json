@@ -1,7 +1,8 @@
+
 {
-  "name": "react-gtm-module-fix-jest",
-  "version": "1.0.1",
-  "description": "React Google Tag Manager Module (solved run test bug)",
+  "name": "react-gtm-module",
+  "version": "2.0.1",
+  "description": "React Google Tag Manager Module",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint .",
@@ -10,6 +11,28 @@
     "build": "babel src -d dist --ignore src/__tests__",
     "prepublish": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alinemorelli/react-gtm"
+  },
+  "author": {
+    "name": "Aline Morelli",
+    "email": "aline.morelliw@gmail.com",
+    "url": "https://github.com/alinemorelli"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alinemorelli/react-gtm/issues"
+  },
+  "homepage": "",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "google tag manager",
+    "tag manager",
+    "gtm"
+  ],
   "peerDependencies": {
     "react": "0.14.x || ^16.2.0"
   },
@@ -21,9 +44,9 @@
     "babel-register": "6.18.0",
     "enzyme": "^3.3.0",
     "eslint": "^3.9.0",
-    "jest": "^22.4.3",
+    "jest": "^19.0.2",
     "jest-cli": "^21.2.1",
-    "react": "^16.3.2",
+    "react": "^16.2.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "sinon": "^1.14.1"
