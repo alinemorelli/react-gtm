@@ -1,6 +1,6 @@
 {
   "name": "react-gtm-module",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React Google Tag Manager Module",
   "main": "dist/index.js",
   "scripts": {
@@ -44,6 +44,7 @@
     "enzyme": "^3.3.0",
     "eslint": "^3.9.0",
     "jest": "^19.0.2",
+    "jest-cli": "^21.2.1",
     "react": "^16.2.0",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
@@ -52,8 +53,5 @@
   "jest": {
     "testRegex": "__tests__.*\\.spec.js$",
     "collectCoverage": true
-  },
-  "dependencies": {
-    "jest-cli": "^21.2.1"
   }
 }
