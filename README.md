@@ -5,7 +5,7 @@
 # react-gtm-module
 ### React Google Tag Manager Module
 
-This is a Javascript module to [React](https://facebook.github.io/react/) based apps that implement Google Tag Manager. It is designed to use [GTM](https://developers.google.com/tag-manager/quickstart) snnipets.
+This is a Javascript module to [React](https://facebook.github.io/react/) based apps that implement Google Tag Manager. It is designed to use [GTM](https://developers.google.com/tag-manager/quickstart) snippet.
 
 You can easily use custom dataLayer, multiple dataLayers and additional events.
 
