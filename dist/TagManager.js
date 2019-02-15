@@ -56,8 +56,8 @@ var TagManager = {
       preview: preview
     });
     if (dataLayer) document.head.appendChild(gtm.dataScript);
-    document.head.appendChild(gtm.script());
-    document.body.appendChild(gtm.noScript());
+    document.head.insertBefore(gtm.script(), document.head.childNodes[0]);
+    document.body.insertBefore(gtm.noScript(), document.body.childNodes[0]);
   },
   dataLayer: function dataLayer(_ref2) {
     var _dataLayer = _ref2.dataLayer,
