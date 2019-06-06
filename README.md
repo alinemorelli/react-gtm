@@ -210,3 +210,5 @@ Look for gtm_auth and gtm_preview
 ### Note:
 
 - Disabling javascript in the browser can prevent the correct operation of this library if React is only being rendered on the client side.
+
+- Before implementing GTM in your application ensure that you have at least one published container, otherwise Google Tag Manager snippet will return 404.
