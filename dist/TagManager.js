@@ -64,6 +64,7 @@ var TagManager = {
         _ref2$dataLayerName = _ref2.dataLayerName,
         dataLayerName = _ref2$dataLayerName === undefined ? 'dataLayer' : _ref2$dataLayerName;
 
+    if (window[dataLayerName]) return window[dataLayerName].push(_dataLayer);
     var snippets = _Snippets2.default.dataLayer(_dataLayer, dataLayerName);
     var dataScript = this.dataScript(snippets);
     document.head.appendChild(dataScript);
