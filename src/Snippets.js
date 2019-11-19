@@ -3,7 +3,7 @@ import warn from './utils/warn'
 // https://developers.google.com/tag-manager/quickstart
 
 const Snippets = {
-  tags: function ({ id, events, dataLayer, dataLayerName, preview, auth, nonce="" }) {
+  tags: function ({ id, events, dataLayer, dataLayerName, preview, auth, nonce = '' }) {
     const gtm_auth = `&gtm_auth=${auth}`
     const gtm_preview = `&gtm_preview=${preview}`
 

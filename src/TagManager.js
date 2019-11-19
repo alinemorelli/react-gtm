@@ -18,6 +18,7 @@ const TagManager = {
     const script = () => {
       const script = document.createElement('script')
       script.innerHTML = snippets.script
+      script.setAttribute('nonce', args.nonce);
       return script
     }
 
@@ -29,14 +30,15 @@ const TagManager = {
       dataScript
     }
   },
-  initialize: function ({ gtmId, events = {}, dataLayer, dataLayerName = 'dataLayer', auth = '', preview = '' }) {
+  initialize: function ({ gtmId, events = {}, dataLayer, dataLayerName = 'dataLayer', auth = '', preview = '', nonce = '' }) {
     const gtm = this.gtm({
       id: gtmId,
       events: events,
       dataLayer: dataLayer || undefined,
       dataLayerName: dataLayerName,
       auth,
-      preview
+      preview,
+      nonce
     })
     if (dataLayer) document.head.appendChild(gtm.dataScript)
     document.head.insertBefore(gtm.script(), document.head.childNodes[0])
