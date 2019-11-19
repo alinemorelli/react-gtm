@@ -18,7 +18,7 @@ const Snippets = {
         w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js', ${JSON.stringify(events).slice(1, -1)}});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
         j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'${gtm_auth}${gtm_preview}&gtm_cookies_win=x';
-        j.setAttribute('nonce',${nonce});
+        j.setAttribute('nonce','${nonce}');
         f.parentNode.insertBefore(j,f);
       })(window,document,'script','${dataLayerName}','${id}');`
   
