@@ -17,7 +17,7 @@ var Snippets = {
         preview = _ref.preview,
         auth = _ref.auth,
         _ref$nonce = _ref.nonce,
-        nonce = _ref$nonce === undefined ? '' : _ref$nonce;
+        nonce = _ref$nonce === undefined ? undefined : _ref$nonce;
 
     var gtm_auth = '&gtm_auth=' + auth;
     var gtm_preview = '&gtm_preview=' + preview;
@@ -26,7 +26,8 @@ var Snippets = {
 
     var iframe = '\n      <iframe src="https://www.googletagmanager.com/ns.html?id=' + id + gtm_auth + gtm_preview + '&gtm_cookies_win=x"\n        height="0" width="0" style="display:none;visibility:hidden" id="tag-manager"></iframe>';
 
-    var script = '\n      (function(w,d,s,l,i){w[l]=w[l]||[];\n        w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\', ' + JSON.stringify(events).slice(1, -1) + '});\n        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';\n        j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl+\'' + gtm_auth + gtm_preview + '&gtm_cookies_win=x\';\n        j.setAttribute(\'nonce\',\'' + nonce + '\');\n        f.parentNode.insertBefore(j,f);\n      })(window,document,\'script\',\'' + dataLayerName + '\',\'' + id + '\');';
+    var nonceLine = !!nonce ? 'j.setAttribute(\'nonce\',\'' + nonce + '\');' : '';
+    var script = '\n      (function(w,d,s,l,i){w[l]=w[l]||[];\n        w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\', ' + JSON.stringify(events).slice(1, -1) + '});\n        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';\n        j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl+\'' + gtm_auth + gtm_preview + '&gtm_cookies_win=x\';\n        ' + nonceLine + 'f.parentNode.insertBefore(j,f);\n      })(window,document,\'script\',\'' + dataLayerName + '\',\'' + id + '\');';
 
     var dataLayerVar = this.dataLayer(dataLayer, dataLayerName);
 

@@ -24,7 +24,9 @@ var TagManager = {
     var script = function script() {
       var script = document.createElement('script');
       script.innerHTML = snippets.script;
-      script.setAttribute('nonce', args.nonce);
+      if (args.nonce) {
+        script.setAttribute('nonce', args.nonce);
+      }
       return script;
     };
 
@@ -48,7 +50,7 @@ var TagManager = {
         _ref$preview = _ref.preview,
         preview = _ref$preview === undefined ? '' : _ref$preview,
         _ref$nonce = _ref.nonce,
-        nonce = _ref$nonce === undefined ? '' : _ref$nonce;
+        nonce = _ref$nonce === undefined ? undefined : _ref$nonce;
 
     var gtm = this.gtm({
       id: gtmId,
