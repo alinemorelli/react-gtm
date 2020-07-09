@@ -1,4 +1,3 @@
-import React from 'react'
 import TagManager from '../TagManager'
 
 describe('TagManager', () => {
