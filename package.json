@@ -1,6 +1,6 @@
 {
   "name": "react-gtm-module",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "React Google Tag Manager Module",
   "main": "dist/index.js",
   "scripts": {
@@ -32,9 +32,6 @@
     "tag manager",
     "gtm"
   ],
-  "peerDependencies": {
-    "react": "0.14.x || ^16.2.0"
-  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
