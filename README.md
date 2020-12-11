@@ -71,7 +71,6 @@ ReactDOM.render(<Router routes={routes} />, app)
 
 ```
 
-
 ### Multiple dataLayer example:
 
 If you need send multiple custom dataLayer you can initialize GTM Module on different components sending different dataLayers
@@ -137,7 +136,7 @@ export default Home
 
 ## Events
 
-### Example:
+### Example using `TagManager.initialize()`:
 
 ```js
 import React from 'react'
@@ -160,6 +159,37 @@ TagManager.initialize(tagManagerArgs)
 
 const app = document.getElementById('app')
 ReactDOM.render(<Router routes={routes} />, app)
+```
+
+### Example using `TagManager.dataLayer()`
+
+You can also push events using `TagManager.dataLayer()` at any moment after initialization:
+
+```js
+import React from 'react'
+
+...
+import TagManager from 'react-gtm-module'
+
+const Home = () => {
+    ...
+    TagManager.dataLayer({
+        dataLayer: {
+          'event': 'eventName',
+          //other
+        }
+    })
+    ...
+
+    return (
+        <div className='home'>
+            //your component code
+        </div>
+    )
+}
+
+export default Home
+
 ```
 
 ## Environments
