@@ -205,6 +205,7 @@ Look for gtm_auth and gtm_preview
 |events| `Object`| No | Additional events such as 'gtm.start': new Date().getTime(),event:'gtm.js'.|
 |auth| `String` | No | used to set environments. |
 |preview| `String` | No | used to set environments, something like `env-00`. |
+|nonce| `String` | No | used to add a [nonce](https://developers.google.com/tag-manager/web/csp) |
 
 
 ### Note:
