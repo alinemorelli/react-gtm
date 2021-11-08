@@ -18,6 +18,9 @@ const TagManager = {
     const script = () => {
       const script = document.createElement('script')
       script.innerHTML = snippets.script
+      if (args.nonce) {
+        script.setAttribute('nonce', args.nonce);
+      }
       return script
     }
 
@@ -29,20 +32,21 @@ const TagManager = {
       dataScript
     }
   },
-  initialize: function ({ gtmId, events = {}, dataLayer, dataLayerName = 'dataLayer', auth = '', preview = '' }) {
+  initialize: function ({ gtmId, events = {}, dataLayer, dataLayerName = 'dataLayer', auth = '', preview = '', nonce = undefined }) {
     const gtm = this.gtm({
       id: gtmId,
       events: events,
       dataLayer: dataLayer || undefined,
       dataLayerName: dataLayerName,
       auth,
-      preview
+      preview,
+      nonce
     })
     if (dataLayer) document.head.appendChild(gtm.dataScript)
     document.head.insertBefore(gtm.script(), document.head.childNodes[0])
     document.body.insertBefore(gtm.noScript(), document.body.childNodes[0])
   },
-  dataLayer: function ({dataLayer, dataLayerName = 'dataLayer'}) {
+  dataLayer: function ({ dataLayer, dataLayerName = 'dataLayer' }) {
     if (window[dataLayerName]) return window[dataLayerName].push(dataLayer)
     const snippets = Snippets.dataLayer(dataLayer, dataLayerName)
     const dataScript = this.dataScript(snippets)
