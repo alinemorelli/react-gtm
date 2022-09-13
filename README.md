@@ -14,8 +14,9 @@ You can easily use custom dataLayer, multiple dataLayers and additional events.
 [npm](https://www.npmjs.com/):
 
 ```bash
-npm install react-gtm-module --save
+npm i --save-dev @types/react-gtm-module
 ```
+
 
 ## Usage
 
