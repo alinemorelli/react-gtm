@@ -205,6 +205,7 @@ Look for gtm_auth and gtm_preview
 |events| `Object`| No | Additional events such as 'gtm.start': new Date().getTime(),event:'gtm.js'.|
 |auth| `String` | No | used to set environments. |
 |preview| `String` | No | used to set environments, something like `env-00`. |
+|url| `String` | No | used to override the default gtm url. |
 
 
 ### Note:
