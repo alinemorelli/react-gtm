@@ -18,6 +18,7 @@ const TagManager = {
     const script = () => {
       const script = document.createElement('script')
       script.innerHTML = snippets.script
+      script.async=true
       return script
     }
 
